@@ -1,0 +1,33 @@
+{
+  "name": "@wings/mfe-starter",
+  "version": "0.0.4",
+  "description": "extension to run wings app with mfe",
+  "main": "main.js",
+  "type": "module",
+  "private": false,
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "bin": {
+    "mfe-starter": "main.js"
+  },
+  "scripts": {
+    "start": "node ./main.js",
+    "build": "npm pack && npm install -g @wings/mfe-starter-0.0.2.tgz"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "commander": "^9.4.0",
+    "concurrently": "^7.6.0",
+    "inquirer": "^8.2.5"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.18.10",
+    "@types/fs-extra": "^9.0.13",
+    "@types/inquirer": "^8.2.5"
+  }
+}

@@ -1,0 +1,15 @@
+export const url = {
+  surveys: '/api/survey/v1/surveys',
+  getAircraftLogisticsandParking: '/api/survey/v1/aircraftlogisticsandparking',
+  getCiqCrewPax: '/api/survey/v1/ciqforcrewpax',
+  getArrivalLogistics: '/api/survey/v1/arrivallogistics',
+  getDepartureLogistics: '/api/survey/v1/departurelogistics',
+  getAirportEvents: '/api/survey/v1/airportevents',
+  getComponentList: '/api/survey/v1/logistics/components',
+  updateLogisticsAndParking: '/api/survey/v1/aircraft/logisticsandparking',
+  updateArrivalLogistics: '/api/survey/v1/arrivallogistics',
+  updateCiqCrewPax: '/api/survey/v1/ciqforcrewpax',
+  updateDepartureLogistics: '/api/survey/v1/departurelogistics',
+  updateAirportEvents: '/api/survey/v1/airportevents',
+  unsubmitAirport: '/api/survey/v1/unsubmit',
+};

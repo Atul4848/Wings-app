@@ -1,0 +1,36 @@
+import { createStyles } from '@material-ui/core/styles';
+
+export const styles = () =>
+  createStyles({
+    root: {
+      height: '95%',
+    },
+    gridContainer: {
+      display: 'flex',
+      height: '100%',
+      width: '100%',
+    },
+    mainContent: {
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    searchFieldSection: {
+      display: 'flex',
+      marginBottom: 10,
+      alignItems: 'center',
+      '& .MuiFormControl-root': {
+        width: '650px',
+        marginRight: '20px',
+      },
+    },
+    btnContainer: {
+      display: 'flex',
+      width: '100%',
+      justifyContent: 'flex-end',
+    },
+    marginRight: {
+      marginRight: '5px',
+    },
+  });

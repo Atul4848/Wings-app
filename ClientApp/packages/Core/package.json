@@ -1,0 +1,47 @@
+{
+  "name": "@wings-shared/core",
+  "version": "1.0.8",
+  "author": "Wings team",
+  "main": "dist/index.js",
+  "module": "dist/core.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "npx tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "npx tsdx build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "dms-conversion": "3.1.1",
+    "tsdx": "^0.14.1"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "semi": true,
+    "trailingComma": "es5",
+    "arrowParens": "avoid"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://pkgs.dev.azure.com/UWA-DEV/_packaging/UWA-DEV/npm/registry/"
+  }
+}

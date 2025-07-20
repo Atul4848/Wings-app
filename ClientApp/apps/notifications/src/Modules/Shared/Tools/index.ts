@@ -1,0 +1,1 @@
+export { default as NotificationsModuleSecurity } from './NotificationsModuleSecurity';

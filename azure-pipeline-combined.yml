@@ -1,0 +1,162 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+name: 1.0.0$(rev:.r)
+
+trigger:
+- master
+
+schedules:
+  - cron: "0 11,0 * * *" # time zone = utc, and not daylight savings time aware
+    displayName: Bidaily build
+    branches:
+      include:
+        - master
+    always: true
+
+resources:
+  repositories:
+  - repository: templates
+    name: tool.PipelineTemplates
+    type: git
+    ref: master
+
+
+
+variables:
+  buildConfiguration: 'Release'
+  customFeed: 'UWA-DEV'
+  azureSubscriptionRDN: 'UniversalRDN (a2bd22d2-ac4b-48d1-b504-6d86e5548d54)'
+  azureSubscriptionWingsPrd: 'Wings PRD Connection'
+  websiteNameRDN: 'app-rdn-wings'
+  websiteNamePrd: 'app-uwa-wings'
+
+
+
+stages:
+- stage: build
+  jobs: 
+  - template: dotnet-core/dotnet-core-build.yml@templates
+    parameters:
+      buildConfiguration: '${{ variables.buildConfiguration }}'
+      nugetFeed: '${{ variables.customFeed }}'
+      environment: '${{ variables.environment }}'
+      services:
+      - name: 'ui.wings.Web'
+        projectFile: '**/*.csproj'
+        repo: 'self'
+        nodeVer: '14.18.1'
+        yarnPackages:
+        - name: ClientApp
+          customFeed: '${{ variables.customFeed }}'
+        runYarnTests: 'false'
+        vmImage: 'ubuntu-latest'
+
+- stage: deployDev
+  displayName: Deploy to Dev
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+  variables: 
+  - group: DEV
+  - group: ALL-ENV
+  - name: environment
+    value: 'dev'
+  jobs: 
+  - template: dotnet-core/dotnet-core-deploy.yml@templates
+    parameters:
+      services:
+      - name: 'ui.wings.Web'
+        tags: 'web'
+        vmImage: 'ubuntu-latest' # Azure
+        runDeploy: 'true'
+        environment: 'uvGO-Wings-${{ variables.environment }}'
+        replaceTokensTargetFiles: |
+          **/appsettings.tokenization.json => appsettings.json
+          **/ClientApp/apps/core/build/static/js/**.js
+        azure:
+        - azureSubscription: '${{ variables.azureSubscriptionRDN }}'
+          webApp:
+          - websiteName: '${{ variables.websiteNameRDN }}'
+            resourceGroupName: 'rg-wings'
+            slotName: '${{ variables.environment }}'
+
+- stage: deployTst
+  displayName: Deploy to Tst
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+  variables: 
+  - group: TST
+  - group: ALL-ENV
+  - name: environment
+    value: 'tst'
+  jobs: 
+  - template: dotnet-core/dotnet-core-deploy.yml@templates
+    parameters:
+      services:
+      - name: 'ui.wings.Web'
+        tags: 'web'
+        vmImage: 'ubuntu-latest' # Azure
+        runDeploy: 'true'
+        environment: 'uvGO-Wings-${{ variables.environment }}'
+        replaceTokensTargetFiles: |
+          **/appsettings.tokenization.json => appsettings.json
+          **/ClientApp/apps/core/build/static/js/**.js
+        azure:
+        - azureSubscription: '${{ variables.azureSubscriptionRDN }}'
+          webApp:
+          - websiteName: '${{ variables.websiteNameRDN }}'
+            resourceGroupName: 'rg-wings'
+            slotName: '${{ variables.environment }}'
+
+- stage: deployStg
+  displayName: Deploy to Stg
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+  variables: 
+  - group: STG
+  - group: ALL-ENV
+  - name: environment
+    value: 'stg'
+  jobs: 
+  - template: dotnet-core/dotnet-core-deploy.yml@templates
+    parameters:
+      services:
+      - name: 'ui.wings.Web'
+        tags: 'web'
+        vmImage: 'ubuntu-latest' # Azure
+        runDeploy: 'true'
+        environment: 'uvGO-Wings-${{ variables.environment }}'
+        replaceTokensTargetFiles: |
+          **/appsettings.tokenization.json => appsettings.json
+          **/ClientApp/apps/core/build/static/js/**.js
+        azure:
+        - azureSubscription: '${{ variables.azureSubscriptionWingsPrd }}'
+          webApp:
+          - websiteName: '${{ variables.websiteNamePrd }}'
+            resourceGroupName: 'rg-wings'
+            slotName: '${{ variables.environment }}'
+
+- stage: deployPrd
+  displayName: Deploy to Prd
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+  variables: 
+  - group: PRD
+  - group: ALL-ENV
+  - name: environment
+    value: 'prd'
+  jobs: 
+  - template: dotnet-core/dotnet-core-deploy.yml@templates
+    parameters:
+      services:
+      - name: 'ui.wings.Web'
+        tags: 'web'
+        vmImage: 'ubuntu-latest' # Azure
+        runDeploy: 'true'
+        environment: 'uvGO-Wings-${{ variables.environment }}'
+        replaceTokensTargetFiles: |
+          **/appsettings.tokenization.json => appsettings.json
+          **/ClientApp/apps/core/build/static/js/**.js
+        azure:
+        - azureSubscription: '${{ variables.azureSubscriptionWingsPrd }}'
+          webApp:
+          - websiteName: '${{ variables.websiteNamePrd }}'
+            resourceGroupName: 'rg-wings'

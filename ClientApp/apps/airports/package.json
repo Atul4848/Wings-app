@@ -1,0 +1,33 @@
+{
+  "name": "@wings/airports",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@wings/shared": "^0.2.1"
+  },
+  "scripts": {
+    "build:clean": "rimraf ./build",
+    "build:craco": "craco build",
+    "build:development": "env-cmd  -f ./.env.development yarn run build:default",
+    "build": "yarn build:clean && yarn build:craco && yarn sprite:icons",
+    "lint": "eslint --ext .ts,.tsx ./",
+    "serve": "yarn build:craco && serve build -l 9003 --cors",
+    "sprite:icons": "svg-sprite --config sprite-config/icons.json '../shared/src/Assets/Icons/./**/*.svg'",
+    "start": "craco start && yarn sprite:icons"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+export class IAPIRetailDataOptionsResponse {
+  Airport1Active: boolean;
+  Airport2Active: boolean;
+  Airport3Active: boolean;
+  Airport4Active: boolean;
+  AirportFlightpakActive: boolean;
+  Runway1Active: boolean;
+  Runway2Active: boolean;
+  Runway3Active: boolean;
+  Runway4Active: boolean;
+  FboActive: boolean;
+  FboServicesActive: boolean;
+  HotelActive: boolean;
+  AttendenceActive: boolean;
+  RemarksActive: boolean;
+  CateringActive: boolean;
+  TransportationActive: boolean;
+  SecurityActive: boolean;
+  Airport1Inactive: boolean;
+  Airport2Inactive: boolean;
+  Airport3Inactive: boolean;
+  Airport4Inactive: boolean;
+  AirportFlightpakInactive: boolean;
+  Runway1Inactive: boolean;
+  Runway2Inactive: boolean;
+  Runway3Inactive: boolean;
+  Runway4Inactive: boolean;
+  FboInactive: boolean;
+  FboServicesInactive: boolean;
+  HotelInactive: boolean;
+  AttendenceInactive: boolean;
+  RemarksInactive: boolean;
+  CateringInactive: boolean;
+  TransportationInactive: boolean;
+  SecurityInactive: boolean;
+}

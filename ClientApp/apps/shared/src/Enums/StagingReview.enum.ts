@@ -1,0 +1,11 @@
+export enum STAGING_REVIEW_STATUS {
+    NOT_MERGED = 1,
+    MERGED,
+    FAILED,
+    REJECTED
+  }
+
+export enum STAGING_REVIEW_COMPARISION_TYPE {
+    ADDED = 1,
+    MODIFIED
+  }

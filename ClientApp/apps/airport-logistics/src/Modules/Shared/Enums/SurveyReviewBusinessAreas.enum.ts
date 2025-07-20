@@ -1,0 +1,7 @@
+export enum SURVEY_REVIEW_BUSINESS_AREAS {
+  AIRCRAFT_GROUND_LOGISTICS_AND_PARKING = 'GroundLogisticsStatus',
+  CIQ_LOGISTICS_CREW_PAX = 'CIQStatus',
+  ARRIVAL_LOGISTICS_CREW_PAX = 'ArrivalLogisticsStatus',
+  DEPARTURE_LOGISTICS_CREW_PAX = 'DepartureLogisticsStatus',
+  EVENT_PERTINENT = 'EventStatus',
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14.211" height="17">
+    <g data-name="Group 42">
+        <g data-name="Group 41">
+            <path data-name="Path 2184" d="M75.2 2.933a2.85 2.85 0 0 0 0-.636L72.58.078A.245.245 0 0 0 72.4 0h-9.636A.782.782 0 0 0 62 .8v14.4a.782.782 0 0 0 .764.8h11.672a.782.782 0 0 0 .764-.8V2.933zM72.655.91l1.676 1.756h-1.422a.261.261 0 0 1-.255-.267zm2.036 14.29a.261.261 0 0 1-.255.267H62.764a.261.261 0 0 1-.255-.267V.8a.261.261 0 0 1 .255-.267h9.382V2.4a.782.782 0 0 0 .764.8h1.782z" transform="translate(-61.5 .5)" style="stroke:currentColor;fill:currentColor"/>
+        </g>
+    </g>
+    <path data-name="Icon material-home" d="M6.2 11.3V8.9h1.6v2.4h2V8.1H11L7 4.5 3 8.1h1.2v3.2z" transform="translate(0 .5)" style="fill:currentColor"/>
+</svg>

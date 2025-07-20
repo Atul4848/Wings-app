@@ -1,0 +1,33 @@
+{
+  "name": "@wings/vendor-management",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "mapbox-gl": "^3.3.0",
+    "react-mapbox-gl": "^5.1.1"
+  },
+  "scripts": {
+    "build:clean": "rimraf ./build",
+    "build:craco": "env-cmd -f ./.env.tokenization craco build",
+    "build:development": "env-cmd  -f ./.env.development yarn run build:default",
+    "build": "yarn build:clean && yarn build:craco && yarn sprite:icons",
+    "lint": "eslint --ext .ts,.tsx ./",
+    "sprite:icons": "svg-sprite --config sprite-config/icons.json '../shared/src/Assets/Icons/./**/*.svg'",
+    "start": "craco start && yarn sprite:icons"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

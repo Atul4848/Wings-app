@@ -1,0 +1,18 @@
+export enum ARRIVAL_LOGISTICS_CREW_PAX {
+  ARRIVAL_PROCEDURES = 'Expected Procedures',
+  ARRIVAL_EXPECTED_PROCEDURE = 'Arrival Expected Procedure',
+  ARRIVAL_PROCEDURE = 'Arrival Procedure',
+  IS_RAMP_SIDE_SHUTTLE_AVAILABLE = 'Is Ramp Side Shuttle Available',
+  WALKING_DISTANCE = 'Walking Distance',
+  DISABILITY_ACCOMMODATION_AVAILABLE = 'Disability Accommodation Available',
+  MOBILITY_TYPE = 'Mobility Type',
+  ARRIVAL_CREW_PAX_PASSPORT_HANDLING = 'Arrival Crew Pax Passport Handling',
+  HANDLING_TYPE = 'Handling Type',
+  ARRIVAL_LUGGAGE_HANDLING = 'Arrival Luggage handling',
+  LUGGAGE_HANDLING_TYPE = 'Luggage Handling Type',
+  ARRIVAL_MEETING_POINT = 'Arrival Meeting Point',
+  MEETING_POINT_TYPE = 'Meeting Point Type',
+  ARRIVAL_ADDRESS = 'Arrival Address',
+  ADDITIONAL_INSTRUCTIONS = 'Additional Instructions',
+  IS_DEPARTURE_ARRIVAL_ADDRESS_SAME = 'Is Departure Arrival Address Same',
+}

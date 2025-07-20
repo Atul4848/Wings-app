@@ -1,0 +1,8 @@
+export enum OPTION_FILTER {
+  BOOL = 'BOOL',
+  INT = 'INT',
+  STRING = 'STRING',
+  TIME = 'TIME',
+  ACTIVEUSER = 'ACTIVEUSER',
+  CRON = 'CRON',
+}

@@ -1,0 +1,42 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+/.pnp
+.pnp.js
+.idea
+
+# testing
+coverage
+
+# production
+**/build
+**/dist/
+# debug
+bin
+obj
+.vs/
+.vscode/
+
+# misc
+.DS_Store
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dev-dependencies.js
+ClientApp/user.npmrc
+ClientApp/.scannerwork/
+ClientApp/apps/airport-logistics/coverage/
+ClientApp/apps/permits/coverage/
+ClientApp/apps/time-zone/coverage/
+ClientApp/apps/shared/coverage/
+ClientApp/apps/countries/coverage/
+ClientApp/apps/airports/coverage/
+UI.Wings.React.csproj.user
+ClientApp/.nyc_output/
+ClientApp/apps/core/build/
+ClientApp/apps/user-management/build/
+ClientApp/apps/countries/build/

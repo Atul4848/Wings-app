@@ -1,0 +1,17 @@
+export enum DEPARTURE_LOGISTICS_CREW_PAX {
+  EARLY_CREW = 'Early Crew',
+  EARLY_CREW_ARRIVAL = 'Early Crew Arrival',
+  EARLY_CREW_ARRIVAL_UNIT = 'Early Crew Arrival Unit',
+  CREW_EARLY_ARRIVAL_MINS = 'Crew Early Arrival Mins:',
+  EARLY_PASSENGER = 'Early Passenger',
+  EARLY_PASSENGER_ARRIVAL = 'Early Passenger Arrival:',
+  EARLY_PASSENGER_ARRIVAL_UNIT = 'Early Passenger Arrival Unit',
+  PAX_EARLY_ARRIVAL_MINS = 'Pax Early Arrival Mins',
+  DEPARTURE_ADDRESS = 'Departure Address',
+  MEETING_POINT= 'Meeting Point',
+  MEETING_LOCATION = 'Meeting Location',
+  MEETING_LOCATION_FILE_PATH = 'Meeting Location File Path',
+  DEPARTURE_PROCEDURE = 'Departure Procedure',
+  DEPARTURE_PROCEDURES = 'Departure Procedures',
+  OTHER_EXPECTED_PROCEDURE = 'Other Expected Procedure',
+}

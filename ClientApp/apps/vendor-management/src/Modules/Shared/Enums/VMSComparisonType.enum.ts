@@ -1,0 +1,5 @@
+export enum VMS_COMPARISON_TYPE {
+  ADDED = 1,
+  DELETED,
+  MODIFIED,
+}

@@ -1,0 +1,15 @@
+export enum AIRCRAFT_VARIATION_FILTERS {
+  POPULAR_NAME = 'Popular Name',
+  MAKE = 'Make',
+  MODEL = 'Model',
+  SERIES = 'Series',
+  ENGINE = 'Engine',
+  ICAO_TYPE = 'ICAO Type Designator',
+  // WAKE_TURBULENCE_CATEGORY = 'Wake Turbulence Category',
+  // OTHER_NAME = 'Other Names',
+  // MODIFICATION = 'Modifications',
+  // STC_MANUFACTURE = 'STC Manufacture',
+  // CAPPA_CRUISE_SCHEDULE = 'CAPPS Cruise Schedule',
+  // PERFORMANCE = 'Performance',
+  // COMMENTS = 'Comments',
+}

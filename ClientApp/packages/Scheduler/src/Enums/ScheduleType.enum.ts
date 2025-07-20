@@ -1,0 +1,5 @@
+export enum SCHEDULE_TYPE {
+  RECURRENCE = 1,
+  CONTINUES,
+  SINGLE_INSTANCE,
+}

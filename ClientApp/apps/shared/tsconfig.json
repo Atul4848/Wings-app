@@ -1,0 +1,11 @@
+{
+  "extends": "../host/tsconfig.json",
+  "exclude": [
+    "node_modules",
+    "build",
+    "src/setupTests.ts",
+    "src/react-app-env.d.ts",
+    "src/index.tsx",
+    "src/serviceWorker.ts"
+  ]
+}

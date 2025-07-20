@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="importmap-type" content="systemjs-importmap" />
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <link rel="stylesheet" href="https://unpkg.com/react-quill@1.3.3/dist/quill.snow.css" />
+    <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
+
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "react": "https://unpkg.com/react@18.3.1/umd/react.production.min.js",
+          "react-dom": "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js",
+          "single-spa": "https://ga.system.jspm.io/npm:single-spa@5.9.4/lib/esm/single-spa.min.js",
+          "@material-ui/core": "https://cdn.jsdelivr.net/npm/@material-ui/core@4.9.0/umd/material-ui.production.min.js",
+          "@wings/host": "/wings-host.js",
+          "@wings/airports": "<%= htmlWebpackPlugin.options.airports %>/wings-airports.js",
+          "@wings/time-zone": "<%= htmlWebpackPlugin.options.timeZone %>/wings-time-zone.js",
+          "@wings/permits": "<%= htmlWebpackPlugin.options.permits %>/wings-permits.js",
+          "@wings/airport-logistics": "<%= htmlWebpackPlugin.options.airportLogistic %>/wings-airport-logistics.js",
+          "@wings/countries": "<%= htmlWebpackPlugin.options.countries %>/wings-countries.js",
+          "@wings/user-management": "<%= htmlWebpackPlugin.options.userManagement %>/wings-user-management.js",
+          "@wings/restrictions": "<%= htmlWebpackPlugin.options.restrictions %>/wings-restrictions.js",
+          "@wings/aircraft": "<%= htmlWebpackPlugin.options.aircraft %>/wings-aircraft.js",
+          "@wings/notifications": "<%= htmlWebpackPlugin.options.notifications %>/wings-notifications.js",
+          "@wings/general": "<%= htmlWebpackPlugin.options.general %>/wings-general.js",
+          "@wings/vendor-management": "<%= htmlWebpackPlugin.options.vendorManagement %>/wings-vendor-management.js",
+          "@wings/customer": "<%= htmlWebpackPlugin.options.customer %>/wings-customer.js"
+        }
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/import-map-overrides/dist/import-map-overrides.js"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+  </head>
+
+  <body>
+    <noscript> You need to enable JavaScript to run this app. </noscript>
+
+    <!-- <main> -->
+    <!-- adding unique div id for each module as same was causing "child remove error" when navigating from one to another -->
+    <div style="position: relative; z-index: 0" id="root"></div>
+    <!-- </main> -->
+    <script>
+      System.import('@wings/host');
+    </script>
+  </body>
+</html>

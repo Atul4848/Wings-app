@@ -1,0 +1,34 @@
+{
+  "name": "@wings/airport-logistics",
+  "version": "0.2.0",
+  "main": "./index.ts",
+  "private": true,
+  "dependencies": {
+    "@wings/shared": "^0.2.1",
+    "react-text-mask": "^5.4.3"
+  },
+  "scripts": {
+    "build": "yarn build:clean && yarn build:craco && yarn sprite:icons",
+    "build:clean": "rimraf ./build",
+    "build:craco": "env-cmd -f ./.env.tokenization craco build",
+    "build:development": "env-cmd  -f ./.env.development yarn run build:default",
+    "lint": "eslint --ext .ts,.tsx ./",
+    "sprite:icons": "svg-sprite --config sprite-config/icons.json '../shared/src/Assets/Icons/./**/*.svg'",
+    "start": "craco start && yarn sprite:icons"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

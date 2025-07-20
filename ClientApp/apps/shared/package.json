@@ -1,0 +1,31 @@
+{
+  "name": "@wings/shared",
+  "main": "./index.ts",
+  "version": "0.2.1",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .ts,.tsx ./"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "dependencies": {
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@microsoft/applicationinsights-web": "^2.5.7",
+    "@uvgo-shared/alert": "^1.0.4",
+    "@uvgo-shared/dialog": "^1.2.1",
+    "@uvgo-shared/dropdown": "^1.0.3",
+    "@uvgo-shared/header": "^1.0.19",
+    "@uvgo-shared/modal-keeper": "^1.0.25",
+    "@uvgo-shared/progress": "^2.0.1",
+    "ag-grid-community": "^26.2.0",
+    "ag-grid-enterprise" : "^26.2.0",
+    "ag-grid-react": "^26.2.0",
+    "react-quill":"^1.3.5",
+    "react-virtualized": "^9.21.2",
+    "react-window": "^1.8.5"
+  },
+  "devDependencies": {
+    "@types/react-virtualized": "^9.21.10"
+  }
+}

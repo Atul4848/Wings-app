@@ -1,0 +1,7 @@
+export enum THREAT_LEVEL_TYPE {
+  OPTIMIZED = 1,
+  MANAGED,
+  PROACTIVE,
+  DEFINED,
+  REACTIVE,
+}

@@ -1,0 +1,33 @@
+
+allow-uncaught: false
+async-only: false
+bail: false
+check-leaks: false
+color: true
+delay: false
+diff: true
+exit: true
+extension:
+  - 'ts'
+  - 'tsx'
+forbid-only: false
+forbid-pending: false
+full-trace: false
+growl: false
+inline-diffs: false
+recursive: false
+reporter: 'spec'
+require:
+  - 'ts-node/register'
+  - 'jsdom-global/register'
+  - 'ignore-styles'
+  - './setupTests.ts'
+retries: 1
+slow: 75
+sort: false
+spec: './apps/**/Tests/*.ts?'
+timeout: false
+trace-warnings: true
+ui: 'bdd'
+v8-stack-trace-limit: 1000
+watch: false

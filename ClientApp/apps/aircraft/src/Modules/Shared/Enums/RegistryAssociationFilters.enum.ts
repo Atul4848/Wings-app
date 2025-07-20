@@ -1,0 +1,3 @@
+export enum REGISTRY_ASSOCIATION_FILTERS {
+  REGISTRY = 'Registry',
+}

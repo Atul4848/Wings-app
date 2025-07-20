@@ -1,0 +1,5 @@
+export enum ALLOWED_IDENTITY_ACTION {
+  ADD,
+  REMOVE,
+  CLEAR_ALL,
+}

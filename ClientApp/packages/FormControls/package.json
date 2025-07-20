@@ -1,0 +1,70 @@
+{
+  "name": "@wings-shared/form-controls",
+  "version": "0.9.8",
+  "author": "Wings team",
+  "main": "dist/index.js",
+  "module": "dist/form-controls.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "npx tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "npx tsdx build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.1",
+    "@mui/icons-material": "^6.0.0",
+    "@mui/lab": "6.0.0-beta.30",
+    "@mui/material": "^6.4.1",
+    "@mui/system": "^6.4.1",
+    "@mui/utils": "^6.4.1",
+    "@mui/x-date-pickers": "^7.27.1",
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 120,
+    "semi": true,
+    "trailingComma": "es5",
+    "arrowParens": "avoid"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://pkgs.dev.azure.com/UWA-DEV/_packaging/UWA-DEV/npm/registry/"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^6.0.0",
+    "@mui/lab": "6.0.0-beta.30",
+    "@mui/material": "^6.4.2",
+    "@mui/system": "^6.4.2",
+    "@mui/utils": "^6.4.2",
+    "@mui/x-date-pickers": "^7.27.1",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "18.3.3"
+  },
+  "resolutions": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "18.3.3"
+  }
+}

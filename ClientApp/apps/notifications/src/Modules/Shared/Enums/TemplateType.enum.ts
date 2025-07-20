@@ -1,0 +1,3 @@
+export enum TEMPLATE_TYPE {
+  EMAIL_ROOT = 'EMAIL_ROOT'
+}

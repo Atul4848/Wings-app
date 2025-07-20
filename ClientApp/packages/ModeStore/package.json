@@ -1,0 +1,42 @@
+{
+  "name": "@wings-shared/mode-store",
+  "version": "0.0.5",
+  "author": "Wings team",
+  "main": "dist/index.js",
+  "module": "dist/mode-store.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "npx tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "npx tsdx build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://pkgs.dev.azure.com/UWA-DEV/_packaging/UWA-DEV/npm/registry/"
+  }
+}

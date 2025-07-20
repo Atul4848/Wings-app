@@ -1,0 +1,33 @@
+import { makeStyles, Theme } from '@material-ui/core';
+
+export const useStyles = makeStyles((theme: Theme) => ({
+  disabled: {
+    opacity: '0.3',
+    filter: 'grayscale(1)',
+    pointerEvents: 'none',
+  },
+  flexWrap: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    width: '100%',
+  },
+  cappsEditorBox: {
+    background: theme.palette.background.default,
+    padding: theme.spacing(1),
+    paddingBottom: theme.spacing(2),
+  },
+  editorBtn: {
+    textAlign: 'right',
+    paddingTop: theme.spacing(3),
+  },
+  flexColumn: {
+    paddingRight: '0 !important',
+  },
+  flexRow: {
+    display: 'flex',
+    width: '100%',
+  },
+  collapsibleWrap: {
+    paddingBottom: '16px',
+  },
+}));

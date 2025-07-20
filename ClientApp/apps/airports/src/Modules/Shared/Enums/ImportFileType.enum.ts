@@ -1,0 +1,5 @@
+export enum IMPORT_FILE_TYPE {
+  AIRPORT = 1,
+  FREQUENCY = 2,
+  RURAL_AIRPORT = 3,
+}

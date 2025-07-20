@@ -1,0 +1,20 @@
+{
+  "dest": "build",
+  "shape": {
+    "id": {
+      "separator": "-",
+      "generator": "icon-"
+    }
+  },
+  "mode": {
+    "symbol": {
+      "dest": "",
+      "sprite": "icons-sprite.svg",
+      "bust": false,
+      "dimensions": false,
+      "render": {
+        "css": false
+      }
+    }
+  }
+}
